@@ -1,0 +1,22 @@
+<!-- reporte-peliculas.html -->
+<div>
+    <h1>Informe de Películas</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Género</th>
+          <th>Año de lanzamiento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Utiliza *ngFor para iterar sobre las películas -->
+        <tr *ngFor="let pelicula of peliculas">
+          <td>{{ pelicula.titulo }}</td>
+          <td>{{ pelicula.genero }}</td>
+          <td>{{ pelicula.lanzamiento }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

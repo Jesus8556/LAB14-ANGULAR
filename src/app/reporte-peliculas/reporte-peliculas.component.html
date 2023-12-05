@@ -1,0 +1,40 @@
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="genero" class="form-label">Filtrar por Género:</label>
+        <input type="text" id="genero" class="form-control" [(ngModel)]="filtroGenero" />
+      </div>
+      <div class="col-md-6">
+        <label for="anio" class="form-label">Filtrar por Año:</label>
+        <input type="number" id="anio" class="form-control" [(ngModel)]="filtroAnio" />
+      </div>
+    </div>
+  
+    <div class="mt-3">
+      <button class="btn btn-primary me-2" (click)="aplicarFiltros()">Aplicar Filtros</button>
+      <button class="btn btn-secondary" (click)="limpiarFiltros()">Limpiar Filtros</button>
+    </div>
+  
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th scope="col">Título</th>
+          <th scope="col">Género</th>
+          <th scope="col">Año de lanzamiento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pelicula of peliculas">
+          <td>{{ pelicula.titulo }}</td>
+          <td>{{ pelicula.genero }}</td>
+          <td>{{ pelicula.lanzamiento }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <button class="btn btn-success" (click)="generarPDF()">Generar PDF</button>
+    
+    <button class="btn btn-success" (click)="exportarCSV()">Generar CSV</button>
+    <button class="btn btn-success" (click)="exportarExcel()">Generar EXCEL</button>
+  </div>
+  
